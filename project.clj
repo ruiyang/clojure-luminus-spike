@@ -10,14 +10,23 @@
                  [com.taoensso/tower "2.0.2"]
                  [markdown-clj "0.9.44"]
                  [environ "0.5.0"]
-                 [noir-exception "0.2.2"]]
+                 [noir-exception "0.2.2"]
+                 [postgresql/postgresql "9.1-901-1.jdbc4"]
+                 [ragtime "0.3.6"]
+                 [korma "0.3.2"]]
 
   :repl-options {:init-ns clojure-luminus-spike.repl}
   :plugins [[lein-ring "0.8.10"]
-            [lein-environ "0.5.0"]]
+            [lein-environ "0.5.0"]
+            [ragtime/ragtime.lein "0.3.6"]]
   :ring {:handler clojure-luminus-spike.handler/app
          :init    clojure-luminus-spike.handler/init
          :destroy clojure-luminus-spike.handler/destroy}
+  :ragtime
+  {:migrations ragtime.sql.files/migrations,
+   :database
+   "jdbc:postgresql://localhost/clojure?user=clojure_user&password=cl0jure"
+   }
   :profiles
   {:uberjar {:aot :all}
    :production {:ring {:open-browser? false
