@@ -1,6 +1,7 @@
 (ns clojure-luminus-spike.repl
   (:use clojure-luminus-spike.handler
         ring.server.standalone
+        clojure-luminus-spike.db.core
         [ring.middleware file-info file]))
 
 (defonce server (atom nil))
