@@ -2,6 +2,7 @@
 A spike project for luminus
 
 1. added ring-json to return json response
+2. added support for postgresql
 
 ## Prerequisites
 
