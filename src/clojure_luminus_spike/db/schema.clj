@@ -4,5 +4,5 @@
 (def db-spec
   {:subprotocol "postgresql"
    :subname "//localhost/clojure"
-   :user (env :postgre_user)
-   :password (env :postgre_passwd)})
+   :user (env :postgre-user)
+   :password (env :postgre-passwd)})
