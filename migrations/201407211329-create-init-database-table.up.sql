@@ -1,5 +1,5 @@
 CREATE TABLE users
-(id BIGINT PRIMARY KEY,
+(id BIGSERIAL PRIMARY KEY,
  first_name VARCHAR(30),
  last_name VARCHAR(30),
  email VARCHAR(30),
@@ -9,7 +9,7 @@ CREATE TABLE users
 
 
  CREATE TABLE tools
- (id BIGINT PRIMARY KEY,
+ (id BIGSERIAL PRIMARY KEY,
  users_id BIGINT REFERENCES users (id),
  tool_name VARCHAR(30),
  description VARCHAR(30),
