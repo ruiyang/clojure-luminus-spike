@@ -42,5 +42,6 @@
      (let [users (:users all-fixtures)]
        (map #(let [created-user (create-user (dissoc % :list_item))]
                (map (fn [list_item]
-                      (add-list-item list_item created-user))  (:list_item %)))
+                      (add-list-item list_item created-user))
+                    (:list_item %)))
             users)))))
