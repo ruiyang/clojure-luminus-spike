@@ -13,7 +13,8 @@
                  [noir-exception "0.2.2"]
                  [postgresql/postgresql "9.1-901-1.jdbc4"]
                  [ragtime "0.3.6"]
-                 [korma "0.3.2"]]
+                 [korma "0.3.2"]
+                 [clj-yaml "0.4.0"]]
 
   :repl-options {:init-ns clojure-luminus-spike.repl}
   :plugins [[lein-ring "0.8.10"]

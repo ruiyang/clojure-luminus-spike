@@ -2,6 +2,8 @@
   (:use clojure-luminus-spike.handler
         ring.server.standalone
         clojure-luminus-spike.db.core
+        [clj-yaml.core :as yaml]
+        [korma.db]
         [ring.middleware file-info file]))
 
 (defonce server (atom nil))
