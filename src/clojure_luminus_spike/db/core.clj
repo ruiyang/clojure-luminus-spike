@@ -5,22 +5,22 @@
 
 (defdb db schema/db-spec)
 
-(declare users tools)
+(declare users list-item)
 
 (defentity users
-  (has-many tools))
+  (has-many list-item))
 
-(defentity tools)
+(defentity list-item
+  (table "list_item"))
 
 (defn create-user [user]
   (insert users
           (values user)))
 
-(defn update-user [id first-name last-name email]
+(defn update-user [id email password]
   (update users
-  (set-fields {:first_name first-name
-               :last_name last-name
-               :email email})
+  (set-fields {:email email
+               :pass password})
   (where {:id id})))
 
 (defn get-user [id]
@@ -31,6 +31,6 @@
 (defn list-user []
   (select users))
 
-(defn add-tools [tool]
-  (insert tools
-          (values tool)))
+(defn add-list-item [tool user]
+  (insert list-item
+          (values (assoc tool :users_id (:id user)))))

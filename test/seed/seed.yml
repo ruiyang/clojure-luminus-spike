@@ -1,0 +1,15 @@
+users:
+    - email:        "john@clojure-blog.org"
+      pass:         "clojure-blogger"
+      list_item:
+        - name: "name1"
+          tags: "tags1"
+        - name: "name2"
+          tags: "tags2"
+    - email:        "jane@clojure-blog.org"
+      pass:         "clojure-blogher"
+      list_item:
+        - name: "name3"
+          tags: "tags1"
+        - name: "name4"
+          tags: "tags3"
