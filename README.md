@@ -3,6 +3,8 @@ A spike project for luminus
 
 1. added ring-json to return json response
 2. added support for postgresql
+3. ragtime to do migration
+4. yaml file and korma to load fixture in repl
 
 ## Prerequisites
 
