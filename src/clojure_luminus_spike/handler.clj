@@ -1,6 +1,7 @@
 (ns clojure-luminus-spike.handler
   (:require [compojure.core :refer [defroutes]]
             [clojure-luminus-spike.routes.home :refer [home-routes]]
+            [clojure-luminus-spike.routes.users :refer [users-routes]]
             [clojure-luminus-spike.middleware :refer [load-middleware]]
             [noir.response :refer [redirect]]
             [noir.util.middleware :refer [app-handler]]
@@ -42,10 +43,9 @@
   (timbre/info "clojure-luminus-spike is shutting down..."))
 
 
-
 (def app (app-handler
            ;; add your application routes here
-           [home-routes app-routes]
+           [home-routes users-routes app-routes]
            ;; add custom middleware here
            :middleware (load-middleware)
            ;; timeout sessions after 30 minutes
