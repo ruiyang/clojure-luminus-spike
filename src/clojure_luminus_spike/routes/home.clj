@@ -12,9 +12,13 @@
   (layout/render "about.html"))
 
 (defn test-json []
-  (resp/response {:a "test"}))
+  (resp/response {:a "test", :b "this is b"}))
+
+(defn test-json2 []
+  (resp/response {:key1 "test", :key2 "this is b"}))
 
 (defroutes home-routes
   (GET "/" [] (home-page))
   (GET "/about" [] (about-page))
-  (GET "/json" [] (test-json)))
+  (GET "/json" [] (test-json))
+  (GET "/json2" [] (test-json2)))

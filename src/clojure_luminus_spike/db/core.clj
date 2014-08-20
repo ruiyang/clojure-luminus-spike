@@ -33,4 +33,8 @@
 
 (defn add-list-item [tool user]
   (insert list-item
-          (values (assoc tool :users_id (:id user)))))
+          (values
+           (assoc tool :users_id (:id user)))))
+
+(defn list-item []
+  ([] (select list-item)))
